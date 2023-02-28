@@ -1,5 +1,7 @@
 ---
 title: "A3: SPL Library Checkouts"
+author: Evan Chang
+date: 2/27/2023
 output: html_document
 editor_options: 
   markdown: 
