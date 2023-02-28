@@ -1,86 +1,77 @@
 ---
 title: "A3: SPL Library Checkouts"
 output: html_document
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library("dplyr")
+library("knitr")
+source("chart1.R")
+source("chart2.R")
+source("chart3.R")
+```
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+This data set provides information about book checkouts from the Seattle Public Library such as a book's checkout type, material, checkout year and month, number of checkouts, etc... This information dates from 2017-2023 and only contains items that were checked out at least 10 times a month.The trend I will be analyzing is the flow and direction that the number of checkouts take over the years for specific books and types of books.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+This dataset highlights many changes over time concerning the borrowing habits of those who use the services of the Seattle Public Library. For instance, the year with the most ebook checkouts was 2020 with . This makes sense as this was the height of the COVID-19 pandemic, which would have caused people to move indoors and obtain books electronically. The year with the least number of ebook checkouts was 2023. This makes sense as 2023 is just starting, but with this trend, it looks like 2023 will have just as many, if not even more checkouts than previous years. Additionally, by analyzing specific books such as "Outside", a better conclusion is made about the trends of book checkouts throughout the years. Specifically, the year with the most checkouts of this book was 2018 while the year with the least number of checkouts was 2022. Finally, by seeing an overall difference in the number of checkouts throughout the years, we are able to make a better conclusion about the trend of checkouts. In this case, I used 2022 as it was the last full year of the dataset and found that 2017 had 1668954 more checkouts than the year 2022. This may be for many reasons such as an increasingly more accessible library of texts found online other than the Seattle Public Library. This data overal shows varying trends of checkouts at different levels of specificity.
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+-   Who collected/published the data?
 
+The data was collected and published by the Seattle Public Library.
+
+-   What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
+
+The dataset includes information on checkouts from the Seattle Public Library system, including the title of the borrowed item, the author, the publication year, the publisher, the ISBN, and the number of checkouts by item, the usage type, checkout type, material type, checkout year and month ranging from from 2017 to 2023. This dataset has 12 columns and 816453 rows.
+
+-   How was the data collected or generated?
+
+The data was likely collected electronically through the library's checkout system and stored in a database.
+It is unclear if the data includes all checkouts or a sample.
+
+-   Why was the data collected?
+
+The data was likely collected to track the popularity of different titles and evaluate the trends of book checkouts throughout the Seattle Public Library system
+
+-   What, if any, ethical questions do you need to consider when working with this data?
+
+Ethical questions could include ensuring the privacy of borrower data and avoiding biased analyses or interpretations.
+It is also important to consider whether the data includes sensitive information such as borrowers' names or addresses and take steps to protect that information.
+
+-   What are possible limitations or problems with this data?
+
+Possible limitations or problems could include incomplete or inaccurate data, lack of context, and biases caused by social and political trends.
+The dataset also does not include information on the specific locations that the books were taken after they were checked out where items were checked out, which could limit the ability to draw conclusions about borrowing patterns in specific locations.
 
 ### First Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r chart1, echo = FALSE}
+chart1
 ```
+
+This chart shows the change in the number of audio books, books, and ebooks that were checked out over the years.
+This was included as it is an important measure in seeing the trends of consumers throughout the years.
+By analyzing which medium has increased or decreased, a better conclusion about the desires of those who consume media is made. This graph indicates a relatively large drop off in the number of checkouts for physical books in 2020 and that makes sense as COVID-19 may have restricted physical book checkouts. Despite that, it seems that all mediums of books in this case have seen a steady increase in the number of checkouts throughout the years.
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r chart2, echo = FALSE}
+chart2
 ```
+
+This bar graph was included as it gives context on the trends of physical vs digital book checkouts throughout the years. From 2017 to 2020, it seems that digital books saw an increase in checkouts while physical books saw a decrease. Both mediums had a drop off in checkouts in 2020 most likely due to the pandemic, but from there both mediums saw a steady rise. 2023 does not have accurate data in this case as the year has not completed.
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r chart3, echo = FALSE}
+chart3
 ```
 
-
+This line plot was included as a way of measuring two very specific cases/authors. In this situation, choosing Dr. Seuss and J.K. Rowling was a method to ensure that both analyzed authors were well known, especially to younger audiences. This graph indicates that both authors over the years have seen great decreases in checkouts, especially Dr. Seuss. Both authors saw their lowest number of checkouts in about 2021 and have been steadily increasing from there, but definitely not to their original capacity.
